@@ -1,0 +1,112 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ac4646da, #ebedee);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 600px;
+    background: rgb(255, 255, 255);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 12px 24px;
+    background: #ff5e99;
+    color: rgb(211, 192, 205);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #e14f87;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    gap: 10px;
+  }
+  
+  nav button {
+    flex: 1;
+    background: #ad208f;
+  }
+  
+  nav button:hover {
+    background: #ca4679;
+  }
+  
+  .page {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .page.active {
+    display: block;
+  }
+  
+  .product-img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+  
+    nav {
+      flex-direction: column;
+    }
+  
+    nav button {
+      margin-bottom: 10px;
+    }
+  }
