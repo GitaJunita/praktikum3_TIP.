@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Whiskas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="container" id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <!-- HALAMAN UTAMA -->
+  <div class="container hidden" id="main-container">
+    <nav>
+      <button onclick="showPage('profil')">Profil</button>
+      <button onclick="showPage('komposisi')">Komposisi</button>
+      <button onclick="showPage('manfaat')">Manfaat</button>
+    </nav>
+
+    <div id="content">
+      <div id="profil" class="page">
+        <h2>Profil Makanan Kucing: Whiskas</h2>
+        <img src="gambarMkucing.jpg" alt="Whis" class="product-img" width="280">
+        <p>Whiskas adalah merek makanan kucing terkenal yang diformulasikan khusus untuk memenuhi kebutuhan nutrisi kucing dari segala usia. Dengan rasa yang disukai kucing dan kandungan nutrisi seimbang.</p>
+      </div>
+
+      <div id="komposisi" class="page hidden">
+        <h2>Komposisi Whiskas</h2>
+        <ul>
+          <li>Daging & produk hewani</li>
+          <li>Sereal</li>
+          <li>Minyak & lemak</li>
+          <li>Vitamin dan mineral</li>
+          <li>Taurin</li>
+        </ul>
+      </div>
+
+      <div id="manfaat" class="page hidden">
+        <h2>Manfaat Whiskas</h2>
+        <ul>
+          <li>Menjaga kesehatan kulit & bulu kucing</li>
+          <li>Mendukung sistem imun</li>
+          <li>Memberikan energi & vitalitas</li>
+          <li>Mendukung kesehatan gigi & tulang</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "gitajunita" && password === "gita2528") {
+        document.getElementById("login-container").classList.add("hidden");
+        document.getElementById("main-container").classList.remove("hidden");
+        showPage('profil');
+      } else {
+        document.getElementById("login-error").innerText = "Username atau password salah!";
+      }
+    }
+
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.add('hidden');
+        page.classList.remove('active');
+      });
+
+      const activePage = document.getElementById(pageId);
+      activePage.classList.remove('hidden');
+      activePage.classList.add('active');
+    }
+  </script>
+</body>
+</html>
